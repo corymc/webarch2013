@@ -1,0 +1,56 @@
+1.	
+	1.	The return code for GET /home HTTP/1.1 is "200 OK".
+
+	The full output was:
+
+	HTTP/1.0 200 OK
+	Content-Type: text/html; charset=utf-8
+	Content-Length: 228
+	Server: Werkzeug/0.8.3 Python/2.7.3
+	Date: Thu, 03 Oct 2013 04:48:23 GMT
+
+	<!DOCTYPE html>
+	<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>i253</title>
+		<link rel="stylesheet" href="static/css/default.css">
+	</head>
+	<body>
+		<div class="container">
+			Hello Jim
+		</div>
+	</body>
+
+	2.	The return code for GET /wiki HTTP/1.1 is "302 Found".
+
+	The full output was:
+
+	HTTP/1.0 302 FOUND
+	Content-Type: text/html; charset=utf-8
+	Content-Length: 253
+	Location: http://en.wikipedia.org
+	Server: Werkzeug/0.8.3 Python/2.7.3
+	Date: Thu, 03 Oct 2013 04:53:24 GMT
+
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+	<title>Redirecting...</title>
+	<h1>Redirecting...</h1>
+	<p>You should be redirected automatically to target URL: <a href="http://en.wikipedia.org">http://en.wikipedia.org</a>.  If not click the link.Connection closed by foreign host.
+
+		1.  A 302 means that the content requested was found at a different URL, so a browser
+			would likely do a GET request to retrieve the desired info from the containing URL.
+
+	3.	The return code for http://people.ischool.berkeley.edu/~cmcdowell/server is "Error code 400.".
+
+	The full output was:
+
+	<head>
+	<title>Error response</title>
+	</head>
+	<body>
+	<h1>Error response</h1>
+	<p>Error code 400.
+	<p>Message: Bad request syntax ('http://people.ischool.berkeley.edu/~cmcdowell/server').
+	<p>Error code explanation: 400 = Bad request syntax or unsupported method.
+	</body>
