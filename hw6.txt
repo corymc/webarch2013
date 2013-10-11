@@ -1,0 +1,37 @@
+1. when running tracerout m.yelp.com, the output is:
+
+	traceroute to m.yelp.com (199.255.189.234), 30 hops max, 60 byte packets
+	 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  1.078 ms  1.041 ms  1.032 ms
+	 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  1.097 ms  0.985 ms  0.994 ms
+	 3  xe-5-1-0.inr-001-sut.Berkeley.EDU (128.32.0.66)  3.564 ms  3.364 ms  3.524 ms
+	 4  dc-sfo-agg-1--ucb-10ge.cenic.net (137.164.50.16)  1.523 ms  1.528 ms  1.572 ms
+	 5  oak-agg2--sfo-agg1-10g.cenic.net (137.164.22.25)  6.155 ms  6.058 ms  5.970 ms
+	 6  dc-paix-px1--oak-core1-ge.cenic.net (137.164.47.18)  3.492 ms  3.413 ms  3.406 ms
+	 7  abovenet--paix-px1.cenic.net (198.32.251.154)  3.546 ms  3.560 ms  3.521 ms
+	 8  xe-3-0-0.cr1.sjc2.us.above.net (64.125.31.66)  4.799 ms  4.816 ms  4.826 ms
+	 9  xe-0-0-0.cr2.sjc2.us.above.net (64.125.30.126)  4.524 ms  4.526 ms  4.567 ms
+	10  xe-0-1-0.mpr4.sfo7.us.above.net (64.125.26.61)  5.301 ms  5.446 ms  40.462 ms
+	11  209.66.115.62.t01325-02.above.net (209.66.115.62)  5.610 ms  5.431 ms  5.537 ms
+	12  m.sfo1.yelp.com (199.255.189.234)  5.501 ms  5.478 ms  5.583 ms
+
+	The IP addresses used to access m.yelp.com are 128.32.78.3, 128.32.255.126, 128.32.0.66, 137.164.50.16, 137.164.22.25, 137.164.47.18, 198.32.251.154, 64.125.31.66, 64.125.30.126, 64.125.26.61, and 209.66.115.62.
+
+2. After entering host m.yelp.com, the output is:
+
+	m.yelp.com has address 198.51.132.234
+	m.yelp.com has address 199.255.189.34
+	m.yelp.com has address 198.51.132.34
+	m.yelp.com has address 199.255.189.234
+
+	So the IP addresses of m.yelp.com are 198.51.132.234, 199.255.189.34, 198.51.132.34, 199.255.189.234
+
+3. When running raceroute amplab.cs.berkeley.edu
+
+	traceroute to amplab.cs.berkeley.edu (128.32.37.248), 30 hops max, 60 byte packets
+	 1  g3-35.inr-211-srb.Berkeley.EDU (128.32.78.3)  0.961 ms  0.931 ms  0.946 ms
+	 2  t6-1.inr-202-reccev.Berkeley.EDU (128.32.255.126)  0.914 ms  0.954 ms  0.994 ms
+	 3  evans-eecs-br-10GE.EECS.Berkeley.EDU (128.32.255.54)  3.304 ms  3.309 ms  3.272 ms
+	 4  soda-10g-edge.EECS.Berkeley.EDU (169.229.59.242)  4.603 ms  4.664 ms  4.690 ms
+	 5  www-research2.CS.Berkeley.EDU (128.32.37.248)  1.729 ms !X  1.748 ms !X  1.807 ms !X
+
+	All of these IPs have a .BERKELEY.EDU extension, so when traveling to amplab.cs.berkeley.edu, we never leave the BERKELEY.EDU network.
