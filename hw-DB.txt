@@ -1,0 +1,45 @@
+Cory McDowell
+cmcdowell@ischool.berkeley.edu
+
+Homework 8 - Databases
+
+How many links were added after 2013-10-14?
+	
+	select COUNT(long_url) from links where created > "2013-10-14"; 
+
+	+-----------------+
+	| COUNT(long_url) |
+	+-----------------+
+	|              11 |
+	+-----------------+
+	1 row in set (0.00 sec)
+
+How many links that were added before 2013-10-14 have fewer than 40 hits?
+
+	select COUNT(long_url) from links where created < "2013-10-14" AND hit_count < 40;	 
+
+	+-----------------+
+	| COUNT(long_url) |
+	+-----------------+
+	|               6 |
+	+-----------------+
+	1 row in set (0.00 sec)
+
+Insert your own URL with a date before 2013-10-14 with greater than 40 hits.
+
+	INSERT INTO links VALUES ("http://cmcdowell.net", "cmcd", 1000, "2012-10-14");
+
+	Query OK, 1 row affected (0.33 sec)
+
+Is it possible that someone querying the database at the same time could see your insert partially complete (eg. only see some fields filled in)? What database property is this related to?
+
+	This should not be possible. The database concept in question is Atomicity. Atomicity is one of the ACID properties. In an atomic transaction, a series of database operations either all occur, or nothing occurs.
+
+Increment the hit_count for only your new row. What is the new count?
+
+	UPDATE links SET hit_count = hit_count + 1 WHERE short_url = "cmcd";
+
+	Query OK, 1 row affected (0.58 sec)
+	Rows matched: 1  Changed: 1  Warnings: 0
+
+	The new count is 1001.
