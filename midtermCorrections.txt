@@ -1,0 +1,66 @@
+3.	Mark tags with semantic meaning: (<-* denotes marked tag)
+	•strong <-*
+	•i
+	•blink
+	•tr <-*
+	•div <-*
+	•b
+	•table <-*
+
+7.	http://example.com/app/user/search/?name="Jim%20Blomo"&gender="male"
+
+9.
+	Example
+	GET/app/search.html HTTP/1.1
+	Host: example.com
+
+13. SEE IMAGE FILE
+
+14. ii) acknowledgement
+		ii) sequence number
+		iv) HTTP
+
+15. v) true
+		vi) false
+
+16. A web page is a representation of a resource identified and located by a URL.
+
+17. Circle the headers used to ensure data in a POST request is handled correctly
+	*Surrounding parentheses followed by <-* denote a circle
+	• (Host)<-*
+	• (Content length)<-*
+	• Date
+	• Server
+	• (Content-Type)<-*
+	• Location
+	• Accept
+
+18.	
+	PUT /student HTTP/1.1
+	Host: ischool.berkeley.edu
+	Content-Type: text/html; charset=utf-8; Content-Length: 28
+	name=Cory McDowell&class=253
+
+19. Cookies are used to identify the client accessing a server. HTTP is statelss, so the server doesn't retain information about the client, cookies are saved by the client. The first time a client accesses a server, a client will send a request (no cookies), and the server responds normally, plus we get a cookie. After login, the server sets the Set-Cookie header. All subsequent requests includes the value. When servers receive a cookie, it must handle the authorization since it cannot trust cookie contents. With cookies, we can tell if a user is logged in with a GET request.
+
+20. Give three indicaitons the following API call is RESTful:
+
+	curl -i -X PUT https://api.github.com/gists/456/star
+
+	HTTP/1.1 404 Not Found
+	Content-Type: application/json; charset utf-8
+	Connection: keep-alive
+	Status: 404 Not Found
+	Content-Length: 29
+
+	{
+		"message": "Not Found"
+	}
+
+	Note: -X sets the HTTP method
+
+		1 - the URL directs us to a specific resource in Github's API subdomain.
+		2 - There is a PUT request, a disgression about actions
+		3 - we are returned a new URI signifying that there will be a "Not Found" message displayed.
+
+
