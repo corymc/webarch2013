@@ -1,0 +1,38 @@
+Cory McDowell
+cmcdowell@ischool.berkeley.edu
+
+Homework 5
+
+1. 	GET /home?name=CoryMcDowell&title=WebArch2013 HTTP/1.1
+
+2. To execute the PUT request, we execute the command:
+
+	PUT /wiki HTTP/1.1
+	Host: localhost
+	Content-Length: 21
+	Content-Type: application/x-www-form-urlencoded
+
+	url=http://google.com
+	
+
+	1.	We verify this change by navigating to http://people.ischool.berkeley.edu/~cmcdowell/server/wiki and seeing that we are redirected to our url, google.com
+
+3. To execute the the POST update, we execute the following command:
+
+	POST /wiki HTTP/1.1
+	Host: localhost
+	Content-Length: 21
+	Content-Type: application/x-www-form-urlencoded
+
+	url=http://reddit.com
+
+4. To resurn an image from http://people.ischool.berkeley.edu/~cmcdowell/server/i253 we execute the followiing command:
+
+	POST /i253 HTTP/1.1
+	Host: localhost
+	Content-length: 21
+	Content-Type: image/jpeg
+
+	url=http://google.com
+
+	The Content-Type is image/jpeg
