@@ -1,0 +1,6 @@
+What’s the diﬀerence between Yelp’s homepage compressed and uncompressed?
+
+When running 'curl www.yelp.com > yelpUncompressed.html' we are provided a file, yelpUncompressed.html, with size 87.3 KB.
+
+When running 'curl --compressed www.yelp.com' we are provided a file, yelpCompressed.html, with size 18.9 KB.
+
